@@ -9,6 +9,7 @@ node('master') {
     stage('Grunt Process') {
         sh """
             cd Grunt
+            npm install
             grunt --serverpath="${serverpath}" --apikey="${apikey}" --testRunName="${testRunName}" --platform="${platform}" --labels="${labels}" --components="${components}" --versions="${versions}" --sprint="${sprint}" --comment="${comment}"
         """
     }
