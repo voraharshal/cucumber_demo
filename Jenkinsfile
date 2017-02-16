@@ -8,6 +8,7 @@ node('master') {
     }
     stage('Grunt Process') {
         sh """
+        	pwd
             cd ../../QTM_JIRA_Jenkins_Demo/Grunt
             grunt --serverpath="${serverpath}" --apikey="${apikey}" --testRunName="${testRunName}" --platform="${platform}" --labels="${labels}" --components="${components}" --versions="${versions}" --sprint="${sprint}" --comment="${comment}"
         """
